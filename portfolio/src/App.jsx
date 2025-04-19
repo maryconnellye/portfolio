@@ -1,26 +1,64 @@
 import React from 'react'
 import { Card } from '@mui/material'
 import './App.css'
+import ResponsiveAppBar from './components/ResponsiveAppBar'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import Skills from './components/Skills';
+import Experience from './components/Experience';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 
 function App() {
- 
 
   return (
     <>
+  <ResponsiveAppBar>
+  <Router>
+      <ResponsiveAppBar /> {/* AppBar always visible */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/experience" element={<Experience />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
+  </ResponsiveAppBar>
+  <Home>
+
+  <Card
+    sx={{
+      width: '100vw',
+      height: '600px',
+      placeSelf: 'center',
+      alignContent:'center',
+      justifyItems: 'center',
+    }}>
+      <p
+      style={{
+        fontSize: '60px',
+        color: '#006C67',
+      }}>Mary Connelly</p>
+      
+      <p style={{
+        fontSize: '40px', 
+        color: '#003844'
+      }}>Web Developer</p>
+
+  </Card>
+      </Home>
+
+      <Skills>
+
   <Card
     sx={{
       width: '150px',
-      height: '150px'
-      
+      height: '150px',
     }}>
-
-      <p>Mary Connelly</p>
-      <p>Web Developer</p>
-
-  </Card>
-
-  <Card>
     <ul>Languages
       <li>HTML</li>
       <li>CSS</li>
@@ -29,7 +67,11 @@ function App() {
       </ul>
   </Card>
 
-  <Card>
+  <Card
+    sx={{
+      width: '150px',
+      height: '150px',
+    }}>
     <ul>Dev Tools
       <li>GitHub & GitFlow</li>
       <li>Netlify</li>
@@ -38,8 +80,16 @@ function App() {
       <li>APIs</li>
       </ul>
   </Card>
+  </Skills>
+  
+  <Experience>
 
-  <Card>
+
+  <Card
+    sx={{
+      width: '150px',
+      height: '150px',
+    }}>
     <ul>Experience
       <li>
         <p>2022</p>
@@ -58,7 +108,11 @@ function App() {
 
   </Card>
 
-  <Card>
+  <Card
+    sx={{
+      width: '150px',
+      height: '150px',
+    }}>
     <ul>Education
       <li>
         <p>2015</p>
@@ -72,6 +126,11 @@ function App() {
 
      </ul>     
   </Card>
+      </Experience>
+
+      <Contact>
+        
+      </Contact>
 
 
       </>
